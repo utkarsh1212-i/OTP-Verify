@@ -22,7 +22,7 @@ exports.registerStudent = async (req, res) => {
 
         // Generate and send OTP
         const otp = otpService.generateOTP();
-        await otpService.storeOTP(email, otp);
+        await otpService.storeOTP(email, otp, true);
         await otpService.sendOTPEmail(email, otp); // Assuming sendOTP handles sending via email
 
         res.status(201).json({ message: 'Student registered successfully, OTP sent to email.', success: true });
@@ -48,7 +48,7 @@ exports.loginStudent = async (req, res) => {
 
         // Generate and send OTP
         const otp = otpService.generateOTP();
-        await otpService.storeOTP(email, otp);
+        await otpService.storeOTP(email, otp, true);
         await otpService.sendOTPEmail(email, otp); // Assuming sendOTP handles sending via email
 
         res.status(200).json({ message: 'OTP sent to email for login.', success: true });

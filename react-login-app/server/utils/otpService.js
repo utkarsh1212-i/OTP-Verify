@@ -51,27 +51,6 @@ const otpService = {
             return false;
         }
     },
-    // sendOTPSMS: async (phone, otp) => {
-    //     console.log("Sending OTP via Phone.Email");
-    //     try {
-    //         const response = await axios.post(process.env.PHONE_EMAIL_API_ENDPOINT, {
-    //             apiKey: process.env.PHONE_EMAIL_API_KEY,
-    //             to: phone,
-    //             message: `Your OTP code is ${otp}`,
-    //         });
-
-    //         if (response.data.success) {
-    //             console.log(`OTP sent successfully to ${phone}`);
-    //             return true;
-    //         } else {
-    //             console.error('Error sending OTP SMS:', response.data.message);
-    //             return false;
-    //         }
-    //     } catch (error) {
-    //         console.error('Error sending OTP SMS:', error.message);
-    //         return false;
-    //     }
-    // },
     storeOTP: async (identifier, otp, isEmail) => {
         const expirationTime = new Date(Date.now() + 5 * 60 * 1000); // 5 minutes from now
 
