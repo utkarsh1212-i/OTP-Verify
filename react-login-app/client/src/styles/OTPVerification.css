@@ -1,0 +1,76 @@
+.otp-verification-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f4f4f9;
+    font-family: Arial, sans-serif;
+}
+
+.otp-title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.otp-instruction {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.otp-error {
+    color: red;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.otp-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.otp-input-container {
+    display: flex;
+    gap: 10px;
+}
+
+.otp-input-container input {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    font-size: 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.otp-input-container input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.otp-submit-button {
+    background-color: #007bff;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.otp-submit-button:hover {
+    background-color: #0056b3;
+}
+
+.otp-submit-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}

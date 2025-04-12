@@ -1,0 +1,49 @@
+.admin-dashboard {
+    text-align: center;
+    margin: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.admin-dashboard h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.student-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.student-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.student-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.student-card h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #007bff;
+}
+
+.student-card p {
+    margin: 5px 0;
+    font-size: 1rem;
+    color: #555;
+}
+
+.student-card p strong {
+    color: #333;
+}
