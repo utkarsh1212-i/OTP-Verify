@@ -1,0 +1,25 @@
+{
+    "name": "client-next",
+    "version": "1.0.0",
+    "description": "React login app with OTP gateway",
+    "main": "index.js",
+    "scripts": {
+        "start": "next start",
+        "dev": "next dev",
+        "build": "next build",
+        "lint": "next lint"
+    },
+    "dependencies": {
+        "next": "latest",
+        "react": "latest",
+        "react-dom": "latest",
+        "axios": "^0.21.1"
+    },
+    "devDependencies": {
+        "eslint": "latest",
+        "eslint-config-next": "latest"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+}
