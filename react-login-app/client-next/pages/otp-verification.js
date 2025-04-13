@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import axios from '../utils/axios'; // Adjust the import path as necessary
 import { useRouter } from 'next/router';
 // import '../styles/OTPVerification.css'; // Import the CSS file
 
