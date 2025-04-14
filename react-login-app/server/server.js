@@ -29,6 +29,10 @@ mongoose.connect(process.env.MONGODB_URI, {
 app.use('/api/admin', adminRoutes);
 app.use('/api/student', studentRoutes);
 app.use('/api/phone-email', phoneEmailRoutes);
+app.get('/api', (req, res) => {
+    res.send('backend is running');
+}
+);
 
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
