@@ -31,7 +31,7 @@ const AdminDashboard = () => {
                 <p>No students have logged in recently.</p>
             ) : (
                 <div className="student-list">
-                    {students.map((student) => (
+                    {students && students.map((student) => (
                         <div className="student-card" key={student._id}>
                             <h3>{student.name}</h3>
                             <p><strong>Roll Number:</strong> {student.rollNumber}</p>
