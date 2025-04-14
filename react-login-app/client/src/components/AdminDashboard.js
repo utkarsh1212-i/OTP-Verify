@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import axios from '../api/axios'; // Adjust the import path as necessary
 import { useHistory } from 'react-router-dom';
 import '../styles/admindashboard.css'; // Import the CSS file for styling
 
