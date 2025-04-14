@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const instance = axios.create({
-    baseURL: 'http://localhost:5000', // Server URL
+    baseURL: 'https://otp-verify-backend.vercel.app', // Server URL
 });
 
 export default instance;
