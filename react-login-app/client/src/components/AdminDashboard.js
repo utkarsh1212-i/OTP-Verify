@@ -21,30 +21,44 @@ const AdminDashboard = () => {
     }, []);
 
     const handleLogout = () => {
-        history.push('/'); // Redirect to login choice page
+        history.push('/admin'); // Redirect to login choice page
     };
 
     return (
         <div className="admin-dashboard">
-            <h1>Recent Student Logins</h1>
-            {students.length === 0 ? (
-                <p>No students have logged in recently.</p>
-            ) : (
-                <div className="student-list">
-                    {students && students.map((student) => (
-                        <div className="student-card" key={student._id}>
-                            <h3>{student.name}</h3>
-                            <p><strong>Roll Number:</strong> {student.rollNumber}</p>
-                            <p><strong>Branch:</strong> {student.branch}</p>
-                            <p><strong>Email:</strong> {student.email}</p>
-                            <p><strong>Phone:</strong> {student.phoneNumber}</p>
-                        </div>
-                    ))}
+            {/* Top Navigation Bar */}
+            <nav className="navbar">
+                <div className="navbar-left">
+                    <h2>Admin Dashboard</h2>
                 </div>
-            )}
-             <button onClick={handleLogout} style={{ marginTop: '20px', padding: '10px 20px', cursor: 'pointer' }}>
-                Logout
-            </button>
+                <div className="navbar-right">
+                    <span className="admin-name">
+                        {localStorage.getItem('adminName') || 'Admin'}
+                    </span>
+                    <button className="logout-button" onClick={handleLogout}>
+                        Logout
+                    </button>
+                </div>
+            </nav>
+
+            <div className="dashboard-content">
+                <h1>Recent Student Logins</h1>
+                {students.length === 0 ? (
+                    <p>No students have logged in recently.</p>
+                ) : (
+                    <div className="student-list">
+                        {students.map((student) => (
+                            <div className="student-card" key={student._id}>
+                                <h3>{student.name}</h3>
+                                <p><strong>Roll Number:</strong> {student.rollNumber}</p>
+                                <p><strong>Branch:</strong> {student.branch}</p>
+                                <p><strong>Email:</strong> {student.email}</p>
+                                <p><strong>Phone:</strong> {student.phoneNumber}</p>
+                            </div>
+                        ))}
+                    </div>
+                )}
+            </div>
         </div>
     );
 };

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+import '../styles/Landingpage.css'; // Import the CSS file
 
 const LoginChoice = () => {
     const history = useHistory();
@@ -13,30 +14,16 @@ const LoginChoice = () => {
     };
 
     return (
-        <div style={{ textAlign: 'center', marginTop: '50px' }}>
-            <h1>Welcome to the Login Portal</h1>
-            <p>Please choose your login type:</p>
-            <div style={{ marginTop: '20px' }}>
-                <button
-                    onClick={handleStudentLogin}
-                    style={{
-                        padding: '10px 20px',
-                        margin: '10px',
-                        fontSize: '16px',
-                        cursor: 'pointer',
-                    }}
-                >
+        <div className="landing-page">
+            <div className="landing-header">
+                <h1>Welcome to the Login Portal</h1>
+                <p>Choose your login type to proceed</p>
+            </div>
+            <div className="button-container">
+                <button className="landing-button student-button" onClick={handleStudentLogin}>
                     Login / Register as Student
                 </button>
-                <button
-                    onClick={handleAdminLogin}
-                    style={{
-                        padding: '10px 20px',
-                        margin: '10px',
-                        fontSize: '16px',
-                        cursor: 'pointer',
-                    }}
-                >
+                <button className="landing-button admin-button" onClick={handleAdminLogin}>
                     Login as Admin
                 </button>
             </div>

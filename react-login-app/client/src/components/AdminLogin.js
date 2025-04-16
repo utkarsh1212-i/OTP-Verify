@@ -59,7 +59,7 @@ const AdminLogin = () => {
                 onClick={() => history.push('/')}
                 title="Go to Home"
             >
-                🏠
+                Back
             </button>
             <h2 className="form-title">Admin Login</h2>
             <form className="student-login-form" onSubmit={isOtpSent ? handleOtpVerification : handleLogin}>

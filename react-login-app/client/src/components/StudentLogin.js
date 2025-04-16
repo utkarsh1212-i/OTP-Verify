@@ -13,10 +13,12 @@ const StudentLogin = () => {
     const [email, setEmail] = useState('');
     const [phoneNumber, setPhone] = useState('');
     const [loading, setLoading] = useState(false); // Loader state
+    const [error, setError] = useState(''); // Error state
 
     const handleRegisterSubmit = async (e) => {
         e.preventDefault();
         setLoading(true); // Start loading
+        setError(''); // Clear previous errors
         const studentData = { rollNumber, name, branch, email, phoneNumber };
         try {
             const response = await axios.post('/api/student/register', studentData);
@@ -25,14 +27,11 @@ const StudentLogin = () => {
             }
         } catch (error) {
             if (error.response && error.response.data) {
-                alert(error.response.data.message);
-                setRollNumber('');
-                setName('');
-                setBranch('');
-                setEmail('');
-                setPhone('');
+                setError(error.response.data.message);
+                setTimeout(() => setError(''), 6000);
             } else {
-                alert('An error occurred. Please try again later.');
+                setError('An error occurred. Please try again later.');
+                setTimeout(() => setError(''), 6000);
             }
         } finally {
             setLoading(false); // Stop loading
@@ -42,15 +41,22 @@ const StudentLogin = () => {
     const handleLoginWithEmail = async (e) => {
         e.preventDefault();
         setLoading(true); // Start loading
+        setError(''); // Clear previous errors
         try {
             const response = await axios.post('/api/student/login', { email });
             if (response.data.success) {
                 history.push('/otp-verification', { email });
             } else {
-                alert('Invalid email. Please try again.');
+                setError('Invalid email. Please try again.');
             }
         } catch (error) {
-            alert('An error occurred. Please try again later.');
+            if (error.response && error.response.data) {
+                setError(error.response.data.message);
+                setTimeout(() => setError(''), 6000);
+            } else {
+                setError('An error occurred. Please try again later.');
+                setTimeout(() => setError(''), 6000);
+            }
         } finally {
             setLoading(false); // Stop loading
         }
@@ -59,15 +65,22 @@ const StudentLogin = () => {
     const handleLoginWithPhone = async (e) => {
         e.preventDefault();
         setLoading(true); // Start loading
+        setError(''); // Clear previous errors
         try {
             const response = await axios.post('/api/student/login-phone', { phoneNumber });
             if (response.data.success) {
                 history.push('/otp-verification', { phoneNumber });
             } else {
-                alert('Invalid phone number. Please try again.');
+                setError('Invalid phone number. Please try again.');
             }
         } catch (error) {
-            alert('An error occurred. Please try again later.');
+            if (error.response && error.response.data) {
+                setError(error.response.data.message);
+                setTimeout(() => setError(''), 6000);
+            } else {
+                setError('An error occurred. Please try again later.');
+                setTimeout(() => setError(''), 6000);
+            }
         } finally {
             setLoading(false); // Stop loading
         }
@@ -80,9 +93,10 @@ const StudentLogin = () => {
                 onClick={() => history.push('/')}
                 title="Go to Home"
             >
-                🏠
+                Back
             </button>
             <h2 className="form-title">{isRegistering ? 'Student Register' : 'Student Login'}</h2>
+            {error && <p className="error-message">{error}</p>} {/* Display error message */}
             {isRegistering ? (
                 <form className="student-login-form" onSubmit={handleRegisterSubmit}>
                     <input

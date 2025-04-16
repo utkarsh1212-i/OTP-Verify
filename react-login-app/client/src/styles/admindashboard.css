@@ -1,15 +1,70 @@
+/* General styles for the dashboard */
 .admin-dashboard {
-    text-align: center;
-    margin: 20px;
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f6f9;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-.admin-dashboard h1 {
+/* Top Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid white;
+    cursor: pointer;
+}
+
+.logout-button {
+    background-color: #ff4d4f;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+    background-color: #e63946;
+}
+
+/* Dashboard Content */
+.dashboard-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.dashboard-content h1 {
     font-size: 2rem;
     margin-bottom: 20px;
     color: #333;
 }
 
+/* Student List */
 .student-list {
     display: flex;
     flex-wrap: wrap;
@@ -17,8 +72,9 @@
     gap: 20px;
 }
 
+/* Student Card */
 .student-card {
-    background-color: #f9f9f9;
+    background-color: white;
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 20px;

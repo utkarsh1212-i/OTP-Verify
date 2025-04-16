@@ -4,43 +4,47 @@
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background-color: #f4f4f9;
+    background: linear-gradient(to bottom, #6a11cb, #5f8fea);
     font-family: Arial, sans-serif;
+    color: white;
+    padding: 20px;
 }
 
 .form-title {
-    font-size: 2rem;
-    color: #333;
+    font-size: 2.5rem;
+    color: #fff;
     margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .student-login-form {
     background: #fff;
-    padding: 20px 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     width: 100%;
     max-width: 400px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
 }
 
 .student-login-form input,
 .student-login-form select,
 .student-login-form button {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     font-size: 1rem;
     border: 1px solid #ccc;
     border-radius: 5px;
     outline: none;
-    transition: border-color 0.3s ease;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .student-login-form input:focus,
 .student-login-form select:focus {
     border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
 .student-login-form button {
@@ -49,21 +53,62 @@
     font-weight: bold;
     cursor: pointer;
     border: none;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .student-login-form button:hover {
     background-color: #0056b3;
+    transform: scale(1.05);
 }
 
 .student-login-form button:disabled {
     background-color: #ccc;
     cursor: not-allowed;
 }
-.toggle-button{
-    margin-top: 2rem;
-}
-.toggle-login-method{
-    margin-top: 2rem;
+
+.home-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    padding: 10px 20px;
     font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.home-button:hover {
+    background-color: #e64a19;
+}
+
+.toggle-button,
+.toggle-login-method {
+    margin-top: 20px;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.toggle-button:hover,
+.toggle-login-method:hover {
+    background-color: white;
+    color: #007bff;
+}
+.error-message {
+    color: #ff4d4f;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    text-align: center;
+    background-color: #ffe6e6;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ff4d4f;
 }
